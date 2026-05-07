@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Milorad's Portfolio</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/layout.css">
+   <link rel="stylesheet" href="css/media-queries.css">
+   <link rel="stylesheet" href="css/magnific-popup.css">
+
+
+   <!-- Script
+   ================================================== -->
+   <script src="js/modernizr.js"></script>
+   <script src="main.js"></script>
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+   <!-- Header
+   ================================================== -->
+   <header id="home">
+
+      <nav id="nav-wrap">
+
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+         <ul id="nav" class="nav">
+            <li class="current"><a href="#home">Home</a></li>
+            <li><a href="https://docs.google.com/document/d/1pSzgcvOabBRc5DPztfyo4oOf6VNM3h_qQQ4fMTl8Q_4/edit?usp=sharing" > Projekte</a></li>
+	         <li><a href="Milorad Cika - Zertifikate.pdf" class="btn">Zertifikate</a></li>
+            <li><a href="Milorad Cika - Lebenslauf.pdf" class="btn">Lebenslauf</a></li>
+         </ul>
+
+      </nav>
+
+
+      <div class="row banner">
+         <div class="banner-text">
+            <div class="profile-wrapper">
+               <img class="profile-pic" src="images/profile.jpg" alt="Profilbild" />
+            </div>
+            <h1 class=>Milorad Cika</h1>
+            
+
+            <div class="about-me">
+               <p>
+                  Wilkommen auf meinem Portfolio! <br><br>
+                  Ich bin Milorad Cika, Informatiker mit Schwerpunkt auf Künstlicher Intelligenz, 
+                  Datenanalyse, Cloud-Technologien und IT-Governance. Durch meine Erfahrungen bei 
+                  Capgemini, KPMG und in freiberuflichen Data-Analytics-Projekten verbinde ich technisches 
+                  Verständnis mit analytischem und strategischem Denken. Besonders interessieren mich die 
+                  Schnittstellen zwischen AI Strategy, Data Management, Governance und Business Transformation.
+                  <br><br>
+                  Auf dieser Website finden Sie einen kompakten Überblick über meinen Werdegang, meine Projekte
+                  und meine fachlichen Schwerpunkte. Bei weiteren Fragen können Sie sich an meinen Chatbot wenden.
+                  <br><br>
+               </p>
+            </div>
+
+
+
+
+            <div class="openclaw-chat-section">
+               <h2>Noch Fragen offen? Fragen Sie meinen persönlichen Chatbot!</h2>
+               <div class="openclaw-chat-window">
+                  <div class="openclaw-chat-header">
+                     <span class="openclaw-status-dot"></span>
+                     <span>Openclaw Agent</span>
+                  </div>
+                  <div class="openclaw-chat-body" id="openclaw-chat-body">
+                     <div class="openclaw-message agent">
+                        Hallo! Ich bin Milorads Openclaw Agent. Wie kann ich dir helfen?
+                     </div>
+                  </div>
+                  <form class="openclaw-chat-form" id="openclaw-chat-form">
+                     <input
+                        type="text"
+                        id="openclaw-chat-input"
+                        placeholder="Nachricht schreiben..."
+                        autocomplete="off"
+                        aria-label="Nachricht an Openclaw Agent"
+                     />
+                     <button type="submit">Senden</button>
+                  </form>
+               </div>
+            </div>
+
+           
+            
+
+            <ul class="social">
+               <li><a href="https://www.linkedin.com/in/milorad-cika-a66134271/"><i class="fa fa-linkedin"></i></a></li>
+               <li><a href="https://github.com/MisoCLOUD"><i class="fa fa-github"></i></a></li>
+            </ul>
+
+         </div>
+      </div>
+
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="js/jquery.flexslider.js"></script>
+   <script src="js/waypoints.js"></script>
+   <script src="js/jquery.fittext.js"></script>
+   <script src="js/magnific-popup.js"></script>
+   <script src="js/init.js"></script>
+
+
+
+
+   <script>
+      const openclawForm = document.getElementById('openclaw-chat-form');
+      const openclawInput = document.getElementById('openclaw-chat-input');
+      const openclawBody = document.getElementById('openclaw-chat-body');
+
+      function addOpenclawMessage(text, sender) {
+         const message = document.createElement('div');
+         message.className = 'openclaw-message ' + sender;
+         message.textContent = text;
+         openclawBody.appendChild(message);
+         openclawBody.scrollTop = openclawBody.scrollHeight;
+      }
+
+      openclawForm.addEventListener('submit', async function(event) {
+         event.preventDefault();
+         const userMessage = openclawInput.value.trim();
+
+         if (!userMessage) {
+            return;
+         }
+
+         addOpenclawMessage(userMessage, 'user');
+         openclawInput.value = '';
+
+         try {
+            /*
+               Ersetze die URL unten durch den Endpoint deines Openclaw Agenten.
+               Erwartetes Beispiel-Format:
+               POST /api/openclaw-chat
+               Body: { "message": "..." }
+               Response: { "reply": "..." }
+            */
+            const response = await fetch('https://web-production-6b646.up.railway.app/api/openclaw-chat', {
+               method: 'POST',
+               headers: {
+                  'Content-Type': 'application/json'
+               },
+               body: JSON.stringify({ message: userMessage })
+            });
+
+            if (!response.ok) {
+               throw new Error('Openclaw Agent nicht erreichbar');
+            }
+
+            const data = await response.json();
+            addOpenclawMessage(data.reply || 'Ich habe leider keine Antwort erhalten.', 'agent');
+         } catch (error) {
+            addOpenclawMessage('Der Openclaw Agent ist aktuell noch nicht verbunden. Bitte hinterlege deinen API-Endpunkt in der HTML-Datei.', 'agent');
+         }
+      });
+   </script>
+
+</body>
+
+</html>
