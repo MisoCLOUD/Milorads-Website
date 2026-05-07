@@ -1,0 +1,323 @@
+/*
+=====================================================================
+*   Layout Stylesheet – bereinigt
+*   Nur Stile, die in index_modified.html verwendet werden
+=====================================================================
+
+   TOC:
+   a. General Styles
+   b. Header Styles
+   c. Navigation
+   d. Banner & Profil
+   e. About Me
+   f. Openclaw Chatfenster
+
+===================================================================== */
+
+/* ------------------------------------------------------------------ */
+/* a. General Styles
+/* ------------------------------------------------------------------ */
+
+body { background: #161415; }
+
+/* ------------------------------------------------------------------ */
+/* b. Header Styles
+/* ------------------------------------------------------------------ */
+
+header {
+   position: relative;
+   height: auto;
+   min-height: 500px;
+   width: 100%;
+   background: #161415 no-repeat top center;
+   background-size: cover !important;
+   -webkit-background-size: cover !important;
+   text-align: center;
+   overflow: visible;
+}
+
+/* vertically center banner section */
+header:before {
+   content: '';
+   display: inline-block;
+   vertical-align: middle;
+   height: 100%;
+}
+header .banner {
+   display: inline-block;
+   vertical-align: middle;
+   margin: 0 auto;
+   width: 85%;
+   padding-bottom: 0px;
+   text-align: center;
+}
+
+/* header social links */
+header .social {
+   margin: 24px 0;
+   padding: 0;
+   font-size: 40px;
+   text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
+}
+header .social li {
+   display: inline-block;
+   margin: 0 15px;
+   padding: 0;
+}
+header .social li a { color: #fff; }
+header .social li a:hover { color: #11ABB0; }
+
+/* ------------------------------------------------------------------ */
+/* c. Navigation
+/* ------------------------------------------------------------------ */
+
+#nav-wrap ul, #nav-wrap li, #nav-wrap a {
+   margin: 0;
+   padding: 0;
+   border: none;
+   outline: none;
+}
+
+#nav-wrap {
+   font: 15px 'opensans-bold', sans-serif;
+   width: 100%;
+   text-transform: uppercase;
+   letter-spacing: 2.5px;
+   margin: 0 auto;
+   z-index: 100;
+   position: fixed;
+   left: 0;
+   top: 0;
+}
+.opaque { background-color: #333; }
+
+/* hide toggle button */
+#nav-wrap > a.mobile-btn { display: none; }
+
+ul#nav {
+   min-height: 48px;
+   width: auto;
+   text-align: center;
+}
+ul#nav li {
+   position: relative;
+   list-style: none;
+   height: 48px;
+   display: inline-block;
+}
+
+ul#nav li a {
+   display: inline-block;
+   padding: 8px 13px;
+   line-height: 32px;
+   text-decoration: none;
+   text-align: left;
+   color: #fff;
+
+   -webkit-transition: color .2s ease-in-out;
+   -moz-transition: color .2s ease-in-out;
+   -o-transition: color .2s ease-in-out;
+   -ms-transition: color .2s ease-in-out;
+   transition: color .2s ease-in-out;
+}
+
+ul#nav li a:active { background-color: transparent !important; }
+ul#nav li.current a { color: #D97757; }
+
+/* ------------------------------------------------------------------ */
+/* d. Banner & Profil
+/* ------------------------------------------------------------------ */
+
+header .banner-text { width: 100%; }
+header .banner-text h1 {
+   font: 65px/1.1em 'opensans-bold', sans-serif;
+   color: #fff;
+   letter-spacing: -2px;
+   margin: 0 auto 18px auto;
+   text-shadow: 0px 1px 3px rgba(0, 0, 0, .8);
+}
+header .banner-text hr {
+   width: 60%;
+   margin: 18px auto 24px auto;
+   border-color: #2F2D2E;
+   border-color: rgba(150, 150, 150, .1);
+}
+
+.banner-text {
+   max-width: 800px;
+   margin: 0 auto;
+}
+
+.profile-wrapper {
+   margin-bottom: 20px;
+   margin-top: 60px;
+}
+
+.profile-pic {
+   width: 150px;
+   height: auto;
+   border-radius: 70%;
+}
+
+/* ------------------------------------------------------------------ */
+/* e. About Me
+/* ------------------------------------------------------------------ */
+
+.about-me {
+   margin-top: 40px;
+   text-align: justify;
+}
+
+.about-me p {
+   font-size: 16px;
+   line-height: 1.6;
+}
+
+/* ------------------------------------------------------------------ */
+/* f. Openclaw Chatfenster
+/* ------------------------------------------------------------------ */
+
+:root {
+   --openclaw-chat-width: 1250px;
+   --openclaw-chat-max-width: 92vw;
+   --openclaw-chat-body-height: 240px;
+   --openclaw-chat-padding: 24px;
+   --openclaw-chat-radius: 18px;
+   --openclaw-chat-accent: #D97757;
+   --openclaw-chat-accent-hover: hwb(0 100% 0%);
+   --openclaw-chat-window-background: #1f1f1e;
+   --openclaw-chat-agent-message: #252524;
+}
+
+.openclaw-chat-section {
+   width: min(var(--openclaw-chat-width), var(--openclaw-chat-max-width));
+   max-width: var(--openclaw-chat-max-width);
+
+   position: relative;
+   left: 50%;
+   transform: translateX(-50%);
+
+   margin-top: 35px;
+   margin-bottom: 25px;
+   padding: var(--openclaw-chat-padding);
+   border-radius: var(--openclaw-chat-radius);
+   backdrop-filter: blur(8px);
+   box-sizing: border-box;
+   text-align: center;
+}
+
+.openclaw-chat-section h2 {
+   margin-bottom: 30px;
+   color: #fff;
+   font-size: 26px;
+}
+
+.openclaw-chat-window {
+   overflow: hidden;
+   border: 1px solid rgba(255, 255, 255, 0.295);
+   border-radius: 14px;
+   text-align: left;
+}
+
+.openclaw-chat-header {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   padding: 14px 18px;
+   color: #fff;
+   font-weight: 700;
+   background: rgba(255, 255, 255, 0.08);
+}
+
+.openclaw-status-dot {
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   background: #3ddc84;
+   box-shadow: 0 0 10px #3ddc84;
+}
+
+.openclaw-chat-body {
+   height: var(--openclaw-chat-body-height);
+   padding: 18px;
+   overflow-y: auto;
+   box-sizing: border-box;
+}
+
+.openclaw-message {
+   max-width: 60%;
+   margin-bottom: 12px;
+   padding: 11px 14px;
+   border-radius: 14px;
+   color: hwb(0 100% 0%);
+   line-height: 1.4;
+   word-wrap: break-word;
+}
+
+.openclaw-message.agent {
+   background: var(--openclaw-chat-agent-message);
+   border-bottom-left-radius: 4px;
+}
+
+.openclaw-message.user {
+   margin-left: auto;
+   background: var(--openclaw-chat-accent);
+   border-bottom-right-radius: 4px;
+}
+
+.openclaw-chat-form {
+   display: flex;
+   gap: 10px;
+   padding: 14px;
+   border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.openclaw-chat-form input {
+   flex: 1;
+   min-width: 0;
+   padding: 12px 14px;
+   border: none;
+   border-radius: 10px;
+   outline: none;
+   box-sizing: border-box;
+}
+
+.openclaw-chat-form button {
+   padding: 12px 18px;
+   border: none;
+   border-radius: 10px;
+   color: #fff;
+   background: var(--openclaw-chat-accent);
+   cursor: pointer;
+   font-weight: 700;
+}
+
+.openclaw-chat-form button:hover {
+   background: var(--openclaw-chat-accent-hover);
+}
+
+/* Tablet */
+@media only screen and (max-width: 900px) {
+   :root {
+      --openclaw-chat-width: 760px;
+      --openclaw-chat-max-width: 92vw;
+   }
+}
+
+/* Handy */
+@media only screen and (max-width: 600px) {
+   :root {
+      --openclaw-chat-width: 100%;
+      --openclaw-chat-max-width: 94vw;
+      --openclaw-chat-body-height: 280px;
+      --openclaw-chat-padding: 18px;
+   }
+
+   .openclaw-chat-form {
+      flex-direction: column;
+   }
+
+   .openclaw-chat-form button {
+      width: 100%;
+   }
+}
