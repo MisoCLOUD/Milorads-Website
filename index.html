@@ -1,195 +1,682 @@
 <!DOCTYPE html>
-<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<html class="no-js" lang="de">
 <head>
-
-
-   <!--- Basic Page Needs
-   ================================================== -->
    <meta charset="utf-8">
-	<title>Milorad's Portfolio</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <title>Milorad's Portfolio</title>
 
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-   <!-- Mobile Specific Metas
-   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-
-	<!-- CSS
-    ================================================== -->
    <link rel="stylesheet" href="css/default.css">
-	<link rel="stylesheet" href="css/layout.css">
+   <link rel="stylesheet" href="css/layout.css">
    <link rel="stylesheet" href="css/media-queries.css">
    <link rel="stylesheet" href="css/magnific-popup.css">
+   <link rel="stylesheet" href="css/portfolio.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
-   <!-- Script
-   ================================================== -->
    <script src="js/modernizr.js"></script>
    <script src="main.js"></script>
-
-
-
-
-
-
 </head>
 
 <body>
-
-
-   <!-- Header
-   ================================================== -->
    <header id="home">
+      <img class="background-video" src="images/back.svg" alt="">
 
-      <nav id="nav-wrap">
-
-         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+      <nav id="nav-wrap" aria-label="Hauptnavigation">
+         <a class="mobile-btn" href="#nav-wrap" title="Navigation anzeigen">Navigation anzeigen</a>
+         <a class="mobile-btn" href="#" title="Navigation ausblenden">Navigation ausblenden</a>
 
          <ul id="nav" class="nav">
             <li class="current"><a href="#home">Home</a></li>
-            <li><a href="https://docs.google.com/document/d/1pSzgcvOabBRc5DPztfyo4oOf6VNM3h_qQQ4fMTl8Q_4/edit?usp=sharing" > Projekte</a></li>
-	         <li><a href="Milorad Cika - Zertifikate.pdf" class="btn">Zertifikate</a></li>
-            <li><a href="Milorad Cika - Lebenslauf.pdf" class="btn">Lebenslauf</a></li>
+            <li><a href="#about">Über mich</a></li>
+            <li><a href="#projekte">Projekte</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#chatbot">Mein Chatbot</a></li>
          </ul>
-
       </nav>
-
 
       <div class="row banner">
          <div class="banner-text">
-            <div class="profile-wrapper">
-               <img class="profile-pic" src="images/profile.jpg" alt="Profilbild" />
-            </div>
-            <h1 class=>Milorad Cika</h1>
-            
+            <section class="about-section" aria-label="Einleitung">
+               <h1 class="about-welcome">Willkommen auf meinem <span class="name-gradient">Portfolio</span></h1>
+               <p class="about-intro">Ich bin Milorad Cika</p>
+               <h2 class="chatbot-teaser-heading">
+                  Sie haben direkte Fragen an mich? Fragen Sie gerne meinen Chatbot!</h2>
+               <a href="#chatbot" class="chatbot-teaser-btn" aria-label="Zum Chatbot">
+                  <img src="images/claude.png" alt="Claude Chatbot" class="chatbot-teaser-btn-icon">
+               </a>
+            </section>
+         </div>
+      </div>
+   </header>
 
-            <div class="about-me">
+   <main>
+      <div class="section-glow"></div>
+      <section id="about" class="cards-section split-section cv-section-wrapper">
+         <div class="split-layout">
+            <div class="split-card-plain">
+               <img class="profile-pic-plain" src="images/profile.png" alt="Profilbild von Milorad Cika">
+            </div>
+
+            <div class="split-text">
                <p>
-                  Wilkommen auf meinem Portfolio! <br><br>
-                  Ich bin Milorad Cika, Informatiker mit Schwerpunkt auf Künstlicher Intelligenz, 
-                  Datenanalyse, Cloud-Technologien und IT-Governance. Durch meine Erfahrungen bei 
-                  Capgemini, KPMG und in freiberuflichen Data-Analytics-Projekten verbinde ich technisches 
-                  Verständnis mit analytischem und strategischem Denken. Besonders interessieren mich die 
+                  Ich bin Milorad Cika, Informatiker mit Schwerpunkt auf Künstlicher Intelligenz,
+                  Datenanalyse, Cloud-Technologien und IT-Governance. Durch meine Erfahrungen bei
+                  Capgemini, KPMG und in freiberuflichen Data-Analytics-Projekten verbinde ich technisches
+                  Verständnis mit analytischem und strategischem Denken. Besonders interessieren mich die
                   Schnittstellen zwischen AI Strategy, Data Management, Governance und Business Transformation.
                   <br><br>
                   Auf dieser Website finden Sie einen kompakten Überblick über meinen Werdegang, meine Projekte
                   und meine fachlichen Schwerpunkte. Bei weiteren Fragen können Sie sich an meinen Chatbot wenden.
-                  <br><br>
                </p>
             </div>
+         </div>
 
+         <div class="cv-container">
+            <div class="cv-tab-toggle" role="tablist" aria-label="Werdegang">
+               <button class="cv-tab active" type="button" data-tab="beruf" onclick="switchTab('beruf')">
+                  Berufserfahrung
+               </button>
+               <button class="cv-tab" type="button" data-tab="ausbildung" onclick="switchTab('ausbildung')">
+                  Ausbildung
+               </button>
+               <button class="cv-tab" type="button" data-tab="zertifikate" onclick="switchTab('zertifikate')">
+                  Zertifikate
+               </button>
+            </div>
 
-
-
-            <div class="openclaw-chat-section">
-               <h2>Noch Fragen offen? Fragen Sie meinen persönlichen Chatbot!</h2>
-               <div class="openclaw-chat-window">
-                  <div class="openclaw-chat-header">
-                     <span class="openclaw-status-dot"></span>
-                     <span>Openclaw Agent</span>
+            <div id="tab-beruf" class="cv-tab-content active">
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <img class="cv-logo-img" src="images/Capgemini.png" alt="Capgemini">
                   </div>
-                  <div class="openclaw-chat-body" id="openclaw-chat-body">
-                     <div class="openclaw-message agent">
-                        Hallo! Ich bin Milorads Openclaw Agent. Wie kann ich dir helfen?
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">IT Architect</span>
+                        <span class="cv-dates">02/2026 – aktuell</span>
                      </div>
+                     <p class="cv-institution">Capgemini</p>
+                     <ul class="cv-bullets">
+                        <li>Mitarbeit bei der Migration der bestehenden Systemlandschaft in die Microsoft Azure Cloud mit Fokus auf Containerisierung.</li>
+                        <li>Enge Zusammenarbeit mit dem Governance-Team zur Sicherstellung einer richtlinien- und policykonformen Cloud-Migration.</li>
+                        <li>Entwicklung und Automatisierung von Anwendungen und Prozessen mit Python.</li>
+                        <li>Entwicklungsschwerpunkt GenAI-Plattformarchitektur.</li>
+                     </ul>
                   </div>
-                  <form class="openclaw-chat-form" id="openclaw-chat-form">
-                     <input
-                        type="text"
-                        id="openclaw-chat-input"
-                        placeholder="Nachricht schreiben..."
-                        autocomplete="off"
-                        aria-label="Nachricht an Openclaw Agent"
-                     />
-                     <button type="submit">Senden</button>
-                  </form>
+               </div>
+
+               <hr class="cv-divider">
+
+               <div class="cv-entry">
+                  <div class="cv-logo-cell cv-logo-cell--empty"></div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">Data Analyst</span>
+                        <span class="cv-dates">08/2025 – 02/2026</span>
+                     </div>
+                     <p class="cv-institution">Freelancing</p>
+                     <ul class="cv-bullets">
+                        <li>Konsolidierung und Strukturierung von Betriebs-, Verkaufs- und Lieferantendaten aus unterschiedlichen Systemen.</li>
+                        <li>Erstellung datenbasierter Auswertungen zur Unterstützung operativer und strategischer Entscheidungen.</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <hr class="cv-divider">
+
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <img class="cv-logo-img" src="images/KPMG.png" alt="KPMG">
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">IT-Security Consultant</span>
+                        <span class="cv-dates">11/2022 – 08/2023</span>
+                     </div>
+                     <p class="cv-institution">KPMG</p>
+                     <ul class="cv-bullets">
+                        <li>Strukturierung eines Leistungsangebots regulatorischer Security-Anforderungen inklusive inhaltlicher Ausarbeitung und adressatengerechter Aufbereitung.</li>
+                        <li>Analyse von SailPoint sowie Bewertung relevanter System-, Prozess- und Schnittstellenanforderungen für externe Kooperationspartner.</li>
+                        <li>Erstellung von Datenschutzschulungen sowie Konzeption und Entwicklung von Awareness-Maßnahmen auf Basis von ISO/IEC 27001, NIST und CSF.</li>
+                        <li>Dokumentation standardisierter Prüf- und Analyseprozesse zur Sicherstellung regulatorischer Anforderungen.</li>
+                        <li>Mitarbeit an der Ausarbeitung des NIS-2-Umsetzungsgesetzes.</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <hr class="cv-divider">
+
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <img class="cv-logo-img" src="images/SC_Bau.png" alt="SC Bau">
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">Buchhaltungsassistent</span>
+                        <span class="cv-dates">10/2017 – 04/2020</span>
+                     </div>
+                     <p class="cv-institution">SC Bau</p>
+                     <ul class="cv-bullets">
+                        <li>Abwicklung administrativer Aufgaben wie Rechnungsstellung, Schriftverkehr, Datenpflege.</li>
+                        <li>Ansprechpartner für Kunden sowie Sicherstellung der Qualitätsstandards.</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            
+            <div id="tab-ausbildung" class="cv-tab-content">
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <img class="cv-logo-img cv-logo-img--uni" src="images/Goethe-Logo.png" alt="Goethe-Universität Frankfurt">
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">Informatik M.Sc.</span>
+                        <span class="cv-dates">10/2021 – 04/2025</span>
+                     </div>
+                     <p class="cv-institution">Goethe-Universität, Frankfurt am Main</p>
+                     <ul class="cv-bullets">
+                        <li>Thesis: Design und Entwicklung einer KI-basierten Chatbot-App in Python zur Unterstützung und Förderung der mentalen Gesundheit.</li>
+                        <li>Schwerpunkt auf Wirtschaftsinformatik, Künstlicher Intelligenz und Big Data.</li>
+                        <li>UniSeminar: In Kooperation mit Campana &amp; Schott eine Ladesäuleninfrastruktur mit innocept mobility für epsotech geplant und erfolgreich vorgestellt.</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <hr class="cv-divider">
+
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <img class="cv-logo-img cv-logo-img--uni" src="images/osaka.png" alt="Osaka University">
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">Auslandssemester</span>
+                        <span class="cv-dates">09/2023 – 02/2024</span>
+                     </div>
+                     <p class="cv-institution">The University of Osaka (大阪大学), Osaka</p>
+                     <ul class="cv-bullets">
+                        <li>Absolvierung eines halbjährigen akademischen Austauschs im Rahmen des Kurzzeit-Studentenaustauschprogramms der Universität Osaka (OUSSEP).</li>
+                        <li>Erwerb internationaler Erfahrung und interkultureller akademischer Kenntnisse im Bereich Management.</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <hr class="cv-divider">
+
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <img class="cv-logo-img cv-logo-img--uni" src="images/Goethe-Logo.png" alt="Goethe-Universität Frankfurt">
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">Informatik B.Sc.</span>
+                        <span class="cv-dates">04/2017 – 08/2021</span>
+                     </div>
+                     <p class="cv-institution">Goethe-Universität, Frankfurt am Main</p>
+                     <ul class="cv-bullets">
+                        <li>Thesis: Konzeption und Entwicklung eines datengetriebenen Reporting-Dashboards in Python für politische Stakeholder im Bildungsbereich.</li>
+                        <li>Nebenfach: Volkswirtschaftslehre.</li>
+                     </ul>
+                  </div>
                </div>
             </div>
 
-           
-            
+            <div id="tab-zertifikate" class="cv-tab-content">
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <div class="cv-pdf-thumb" onclick="openPdfLightbox('images/AZ-900.pdf')" title="PDF öffnen">
+                        <iframe class="cv-pdf-iframe" src="images/AZ-900.pdf#toolbar=0&navpanes=0&scrollbar=0" title="AZ-900 Zertifikat"></iframe>
+                        <div class="cv-pdf-overlay"><span class="cv-pdf-icon">&#128269;</span></div>
+                     </div>
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">Microsoft Certified: Azure Fundamentals (AZ-900)</span>
+                        <span class="cv-dates">Mai 2026</span>
+                     </div>
+                     <p class="cv-institution">Microsoft</p>
+                     <ul class="cv-bullets">
+                        <li>Credential ID: 6A1D12F32C7BC97C · Certification number: 159E2B-OB5C40</li>
+                     </ul>
+                  </div>
+               </div>
 
-            <ul class="social">
-               <li><a href="https://www.linkedin.com/in/milorad-cika-a66134271/"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="https://github.com/MisoCLOUD"><i class="fa fa-github"></i></a></li>
-            </ul>
+               <hr class="cv-divider">
 
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <div class="cv-pdf-thumb" onclick="openPdfLightbox('images/MS_AI_Product_Manager.pdf')" title="PDF öffnen">
+                        <iframe class="cv-pdf-iframe" src="images/MS_AI_Product_Manager.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Microsoft AI Product Manager Zertifikat"></iframe>
+                        <div class="cv-pdf-overlay"><span class="cv-pdf-icon">&#128269;</span></div>
+                     </div>
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">Microsoft AI Product Manager</span>
+                        <span class="cv-dates">Feb 2026</span>
+                     </div>
+                     <p class="cv-institution">Microsoft &amp; Coursera</p>
+                     <ul class="cv-bullets">
+                        <li>Lead Enterprise Product Development with Copilot: Azure, Power BI, UX/UI Design, Product Lifecycle Management.</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <hr class="cv-divider">
+
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <div class="cv-pdf-thumb" onclick="openPdfLightbox('images/Microsoft_Business_Analyst_Zertifikat.pdf')" title="PDF öffnen">
+                        <iframe class="cv-pdf-iframe" src="images/Microsoft_Business_Analyst_Zertifikat.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Microsoft Business Analyst Zertifikat"></iframe>
+                        <div class="cv-pdf-overlay"><span class="cv-pdf-icon">&#128269;</span></div>
+                     </div>
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">Microsoft Business Analyst</span>
+                        <span class="cv-dates">Nov 2025</span>
+                     </div>
+                     <p class="cv-institution">Microsoft &amp; Coursera</p>
+                     <ul class="cv-bullets">
+                        <li>Business Analysis, Microsoft Visio, Excel, Power Platform, Requirements Gathering, Stakeholder Management.</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <hr class="cv-divider">
+
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <div class="cv-pdf-thumb" onclick="openPdfLightbox('images/Data_Analytics_Zertifikat.pdf')" title="PDF öffnen">
+                        <iframe class="cv-pdf-iframe" src="images/Data_Analytics_Zertifikat.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Google Data Analytics Zertifikat"></iframe>
+                        <div class="cv-pdf-overlay"><span class="cv-pdf-icon">&#128269;</span></div>
+                     </div>
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">Google Data Analytics</span>
+                        <span class="cv-dates">Aug 2025</span>
+                     </div>
+                     <p class="cv-institution">Google &amp; Coursera</p>
+                     <ul class="cv-bullets">
+                        <li>Spreadsheets, SQL, Tableau, R Programming, Datenaufbereitung, Visualisierung und Analyse.</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <hr class="cv-divider">
+
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <div class="cv-pdf-thumb" onclick="openPdfLightbox('images/Project_Management_Zertifikat.pdf')" title="PDF öffnen">
+                        <iframe class="cv-pdf-iframe" src="images/Project_Management_Zertifikat.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Google Project Management Zertifikat"></iframe>
+                        <div class="cv-pdf-overlay"><span class="cv-pdf-icon">&#128269;</span></div>
+                     </div>
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">Google Project Management</span>
+                        <span class="cv-dates">Apr 2024</span>
+                     </div>
+                     <p class="cv-institution">Google &amp; Coursera</p>
+                     <ul class="cv-bullets">
+                        <li>Projektplanung, -durchführung, Agile/Scrum, traditionelles und agiles Projektmanagement.</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+
+            <div id="cv-pdf-lightbox" class="cv-pdf-lightbox" onclick="closePdfLightbox()">
+               <div class="cv-pdf-lightbox-inner" onclick="event.stopPropagation()">
+                  <button class="cv-pdf-close" type="button" onclick="closePdfLightbox()" aria-label="PDF schließen">
+                     &#10005;
+                  </button>
+                  <iframe id="cv-pdf-lightbox-frame" class="cv-pdf-lightbox-frame" src="" title="Zertifikat PDF"></iframe>
+               </div>
+            </div>
          </div>
-      </div>
+      </section>
+      <div class="section-glow"></div>
 
+      <section id="projekte" class="work-section">
+         <h2 class="work-heading">Praktische Erfahrungen</h2>
+         <div class="work-container">
 
-   <!-- Java Script
-   ================================================== -->
+            <div class="work-carousel-wrapper">
+               <div class="work-carousel-track" id="workCarouselTrack">
+
+                  <a href="work1.html" class="work-card work-card-link">
+                     <div class="work-card-image-wrap">
+                        <img src="images/work1.svg" alt="Data Analytics Projects" class="work-card-img">
+                        <div class="work-card-overlay">
+                           <span class="work-card-zoom">&#8599;</span>
+                        </div>
+                     </div>
+                     <div class="work-card-info">
+                        <h3 class="work-card-title">Data Analytics Projects</h3>
+                        <p class="work-card-category">Data Analytics &amp; Data Science</p>
+                     </div>
+                  </a>
+
+                  <a
+                     href="https://docs.google.com/document/d/1pSzgcvOabBRc5DPztfyo4oOf6VNM3h_qQQ4fMTl8Q_4/edit?usp=sharing"
+                     class="work-card work-card-link"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                  >
+                     <div class="work-card-image-wrap">
+                        <img src="images/work2.svg" alt="Seminar Campana & Schott" class="work-card-img">
+                        <div class="work-card-overlay">
+                           <span class="work-card-zoom">&#8599;</span>
+                        </div>
+                     </div>
+                     <div class="work-card-info">
+                        <h3 class="work-card-title">Cloud- /Data Engineer Projekte</h3>
+                        <p class="work-card-category">Azure &amp; GCP</p>
+                     </div>
+                  </a>
+
+                  <a href="work2.html" class="work-card work-card-link">
+                     <div class="work-card-image-wrap">
+                        <img src="images/work3.svg" alt="Cloud Engineering Portfolio" class="work-card-img">
+                        <div class="work-card-overlay">
+                           <span class="work-card-zoom">&#8599;</span>
+                        </div>
+                     </div>
+                     <div class="work-card-info">
+                        <h3 class="work-card-title">Seminar Campana &amp; Schott</h3>
+                        <p class="work-card-category">Projectmanagement</p>
+                     </div>
+                  </a>
+
+                  <a href="work4.html" class="work-card work-card-link">
+                     <div class="work-card-image-wrap">
+                        <img src="images/work4.svg" alt="Projekt 4" class="work-card-img">
+                        <div class="work-card-overlay">
+                           <span class="work-card-zoom">&#8599;</span>
+                        </div>
+                     </div>
+                     <div class="work-card-info">
+                        <h3 class="work-card-title">Mental Health KI-Chatbot</h3>
+                        <p class="work-card-category">Künstliche Intelligenz</p>
+                     </div>
+                  </a>
+
+                  <a href="#" class="work-card work-card-link">
+                     <div class="work-card-image-wrap">
+                        <img src="images/work5.svg" alt="Projekt 5" class="work-card-img">
+                        <div class="work-card-overlay">
+                           <span class="work-card-zoom">&#8599;</span>
+                        </div>
+                     </div>
+                     <div class="work-card-info">
+                        <h3 class="work-card-title">Website Development</h3>
+                        <p class="work-card-category">HTML & CSS</p>
+                     </div>
+                  </a>
+
+               </div><!-- /.work-carousel-track -->
+            </div><!-- /.work-carousel-wrapper -->
+
+            <!-- Arrow Navigation -->
+            <div class="work-carousel-nav">
+               <button class="work-carousel-btn" id="workPrev" aria-label="Vorheriges Projekt">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                     <polyline points="15 18 9 12 15 6"/>
+                  </svg>
+               </button>
+               <button class="work-carousel-btn" id="workNext" aria-label="Nächstes Projekt">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                     <polyline points="9 18 15 12 9 6"/>
+                  </svg>
+               </button>
+            </div>
+
+         </div><!-- /.work-container -->
+      </section>
+      <div class="section-glow"></div>
+
+      <section id="skills" class="cards-section">
+         <div class="cards-grid">
+            <div class="glass-card">
+               <h3 class="card-title">Python</h3>
+               <p class="card-body">Meine Hauptprogrammiersprache, mit der ich bisher verschiedenste Projekte im Bereich Analytics und KI umgesetzt habe.</p>
+            </div>
+
+            <div class="glass-card">
+               <h3 class="card-title">Generative AI</h3>
+               <p class="card-body">Fundiertes Wissen zu KI, Machine Learning, Deep Learning und GenAI sowie Erfahrung mit KI-gestützten Tools, Prompting und Anwendungsmöglichkeiten generativer KI.</p>
+            </div>
+
+            <div class="glass-card">
+               <h3 class="card-title">Projektmanagement</h3>
+               <p class="card-body">Erfahrung in agilen Projektumgebungen sowie Zusammenarbeit in iterativen Entwicklungsprozessen. Vertraut mit Scrum, Kanban und SAFe.</p>
+            </div>
+
+            <div class="glass-card">
+               <h3 class="card-title">Governance</h3>
+               <p class="card-body">Während meiner Zeit als IT-Security Consultant bin ich viel mit regulatorischen Themen in Kontakt gewesen.</p>
+            </div>
+
+            <div class="glass-card">
+               <h3 class="card-title">Cloud Computing</h3>
+               <p class="card-body">Grundlagen in Azure und GCP, Cloud-Migration, Containerisierung und cloudbasierte Anwendungen.</p>
+            </div>
+
+            <div class="glass-card">
+               <h3 class="card-title">Data Analytics</h3>
+               <p class="card-body">Grundlagen in Datenanalyse, Datenaufbereitung und Interpretation datenbasierter Zusammenhänge.</p>
+            </div>
+         </div>
+      </section>
+      <div class="section-glow"></div>
+
+      <section id="chatbot" class="chatbot-area">
+         <h2 class="chatbot-heading">Sie haben noch Fragen? Fragen Sie gerne meinen Chatbot!</h2>
+         <div class="openclaw-chat-section">
+            <div class="openclaw-chat-window">
+               <div class="openclaw-chat-header">
+                  <span class="openclaw-status-dot"></span>
+                  <span>Milorad's Chatbot</span>
+               </div>
+
+               <div class="openclaw-chat-body" id="openclaw-chat-body">
+                  <div class="openclaw-message agent">
+                     Hallo! Ich bin Milorads persönlicher KI-Agent. Wie kann ich dir helfen?
+                  </div>
+               </div>
+
+               <form class="openclaw-chat-form" id="openclaw-chat-form">
+                  <input
+                     type="text"
+                     id="openclaw-chat-input"
+                     placeholder="Nachricht schreiben..."
+                     autocomplete="off"
+                     aria-label="Nachricht an Openclaw Agent"
+                  >
+                  <button type="submit" aria-label="Nachricht senden">Senden</button>
+               </form>
+            </div>
+         </div>
+      </section>
+      <div class="section-glow"></div>
+
+      <section class="cards-section download-section">
+         <h2 class="download-heading">Meine Unterlagen zum Download</h2>
+
+         <div class="download-buttons">
+            <a href="Milorad Cika - Zertifikate.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
+               Zertifikate
+            </a>
+            <a href="Milorad Cika - Lebenslauf.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
+               Lebenslauf
+            </a>
+            <a href="Milorad Cika - Arbeitszeugnisse.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
+               Arbeitszeugnisse
+            </a>
+         </div>
+      </section>
+      <div class="section-glow"></div>
+
+   <!-- Socials -->
+      <section style="background: #0f0f0f;">
+         <ul class="social">
+            <li><a href="https://www.linkedin.com/in/milorad-cika-a66134271/"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://github.com/MisoCLOUD"><i class="fa fa-github"></i></a></li>
+         </ul>
+      </section>
+   </main>
+
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
    <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-
+   <script src="js/jquery-migrate-1.2.1.min.js"></script>
    <script src="js/jquery.flexslider.js"></script>
    <script src="js/waypoints.js"></script>
    <script src="js/jquery.fittext.js"></script>
    <script src="js/magnific-popup.js"></script>
    <script src="js/init.js"></script>
 
-
-
-
    <script>
+      (function() {
+         var sections = ['home', 'about', 'projekte', 'skills', 'chatbot'];
+         var navLinks = document.querySelectorAll('#nav li a');
+         var navOffset = 80;
+
+         function onScroll() {
+            var scrollY = window.pageYOffset;
+            var current = 'home';
+
+            sections.forEach(function(id) {
+               var el = document.getElementById(id);
+
+               if (el && el.offsetTop - navOffset <= scrollY) {
+                  current = id;
+               }
+            });
+
+            navLinks.forEach(function(link) {
+               var href = link.getAttribute('href');
+               link.parentElement.classList.toggle('current', href === '#' + current);
+            });
+         }
+
+         window.addEventListener('scroll', onScroll, { passive: true });
+         onScroll();
+      })();
+
+      function switchTab(tab) {
+         document.querySelectorAll('.cv-tab').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.tab === tab);
+         });
+
+         document.querySelectorAll('.cv-tab-content').forEach(function(pane) {
+            pane.classList.toggle('active', pane.id === 'tab-' + tab);
+         });
+      }
+
+      function openPdfLightbox(src) {
+         var lightbox = document.getElementById('cv-pdf-lightbox');
+         var frame = document.getElementById('cv-pdf-lightbox-frame');
+
+         frame.src = src;
+         lightbox.classList.add('active');
+         document.body.style.overflow = 'hidden';
+      }
+
+      function closePdfLightbox() {
+         var lightbox = document.getElementById('cv-pdf-lightbox');
+         var frame = document.getElementById('cv-pdf-lightbox-frame');
+
+         lightbox.classList.remove('active');
+         frame.src = '';
+         document.body.style.overflow = '';
+      }
+
       const openclawForm = document.getElementById('openclaw-chat-form');
       const openclawInput = document.getElementById('openclaw-chat-input');
       const openclawBody = document.getElementById('openclaw-chat-body');
 
       function addOpenclawMessage(text, sender) {
          const message = document.createElement('div');
+
          message.className = 'openclaw-message ' + sender;
          message.textContent = text;
+
          openclawBody.appendChild(message);
          openclawBody.scrollTop = openclawBody.scrollHeight;
       }
 
+      // ── Work Carousel ──────────────────────────────────────────
+      (function () {
+         const track   = document.getElementById('workCarouselTrack');
+         const prevBtn = document.getElementById('workPrev');
+         const nextBtn = document.getElementById('workNext');
+
+         if (!track) return;
+
+         const cards   = Array.from(track.querySelectorAll('.work-card'));
+         const VISIBLE = 3;
+         const total   = cards.length;
+         let   current = 0;
+
+         function getCardStep() {
+         // Breite einer Karte + Gap (32px) = exakter Versatz pro Schritt
+            const card = cards[0];
+            const gap  = 32;
+            return card.getBoundingClientRect().width + gap;
+         }
+
+         function update() {
+            const step   = getCardStep();
+            const offset = current * step;
+            track.style.transform = 'translateX(-' + offset + 'px)';
+            prevBtn.disabled = current === 0;
+            nextBtn.disabled = current >= total - VISIBLE;
+         }
+
+         function goTo(index) {
+            current = Math.max(0, Math.min(index, total - VISIBLE));
+            update();
+         }
+
+         prevBtn.addEventListener('click', function() { goTo(current - 1); });
+         nextBtn.addEventListener('click', function() { goTo(current + 1); });
+
+         // Bei Fenstergrößenänderung neu berechnen
+         window.addEventListener('resize', update);
+
+         update();
+      })();
+      // ───────────────────────────────────────────────────────────
+
       openclawForm.addEventListener('submit', async function(event) {
          event.preventDefault();
+
          const userMessage = openclawInput.value.trim();
 
-         if (!userMessage) {
-            return;
-         }
+         if (!userMessage) return;
 
          addOpenclawMessage(userMessage, 'user');
          openclawInput.value = '';
 
          try {
-            /*
-               Ersetze die URL unten durch den Endpoint deines Openclaw Agenten.
-               Erwartetes Beispiel-Format:
-               POST /api/openclaw-chat
-               Body: { "message": "..." }
-               Response: { "reply": "..." }
-            */
             const response = await fetch('https://web-production-6b646.up.railway.app/api/openclaw-chat', {
                method: 'POST',
-               headers: {
-                  'Content-Type': 'application/json'
-               },
+               headers: { 'Content-Type': 'application/json' },
                body: JSON.stringify({ message: userMessage })
             });
 
-            if (!response.ok) {
-               throw new Error('Openclaw Agent nicht erreichbar');
-            }
+            if (!response.ok) throw new Error('Nicht erreichbar');
 
             const data = await response.json();
             addOpenclawMessage(data.reply || 'Ich habe leider keine Antwort erhalten.', 'agent');
          } catch (error) {
-            addOpenclawMessage('Der Openclaw Agent ist aktuell noch nicht verbunden. Bitte hinterlege deinen API-Endpunkt in der HTML-Datei.', 'agent');
+            addOpenclawMessage('Der Openclaw Agent ist aktuell noch nicht verbunden.', 'agent');
          }
       });
    </script>
-
 </body>
-
 </html>
