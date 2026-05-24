@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <title>Neue Seite – Milorad Cika</title>
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+   <link rel="stylesheet" href="css/default.css">
+   <link rel="stylesheet" href="css/layout2.css">
+   <link rel="stylesheet" href="css/media-queries.css">
+   <link rel="stylesheet" href="css/layout-single.css">
+
+   <script src="js/modernizr.js"></script>
+</head>
+
+<body>
+
+   <!-- Zurück-Button -->
+   <a href="index.html" class="back-link">&#8592; Portfolio</a>
+
+   <!-- Seitentitel -->
+   <div class="page-hero">
+      <h1 class="page-title"><span>AI chatbot</span> for mental health</h1>
+   </div>
+
+   <!-- Einzelner Content-Block -->
+   <main class="projects-wrapper">
+
+      <section class="project-card single-block">
+         <div class="project-content">
+            <h2 class="project-title">4.6 Development of the App</h2>
+
+            <p class="project-description">
+               After defining and clarifying the conceptualization of TOMODACH-E, the following section will
+               focus on its implementation. Tomo's intelligence is powered by a Large Language Model (LLM),
+               specifically OpenAI's ChatGPT. The reason for choosing ChatGPT is that, in addition to its
+               extensive knowledge across a wide range of topics and its ease of integration into custom
+               projects, numerous studies and research highlight its beneficial capabilities for mental health
+               use cases. Without requiring extensive fine-tuning, the model can be adjusted via an initial
+               input that easily defines its role, memory, and behavior.
+            </p>
+
+            <p class="project-description">
+               To integrate all functionalities related to ChatGPT, Python was chosen for implementing the
+               backend. Due to its versatility and extensive library support, particularly in artificial
+               intelligence and audio processing, Python allows for rapid prototyping and seamless integration
+               of advanced AI models and external APIs. Since this is a prototype, the app was initially
+               developed exclusively for Android to keep the development process simple. For frontend
+               development, Java and Kotlin were used.
+            </p>
+
+            <h2 class="project-title">4.6.1 Implementation of the ChatGPT Model</h2>
+
+            <p class="project-description">
+               When a user sends a message, the chatbot retrieves the previous conversation history with
+               <code>convert_file_to_dicts()</code>. The new user message is appended to the conversation
+               history. The chatbot then processes the message by sending the entire conversation history,
+               including previous messages and the new input, to OpenAI's API. The API generates a response
+               based on the entire conversation history. The chatbot displays the response to the user and
+               saves both the user's message and the chatbot's response in <code>convo_history.txt</code>
+               using <code>save_convo_history()</code>.
+            </p>
+
+            <p class="project-description">
+               The heart of the chatbot is the <code>process_text_with_openai</code> function in
+               <code>processText.py</code>, which sends user messages to the OpenAI API and retrieves
+               responses. This function initializes a connection to the OpenAI API using an API key, builds
+               a list of messages starting with a system message that establishes the chatbot's personality,
+               adds the previous conversation history and the new user input, and sends everything to
+               OpenAI's GPT-3.5 Turbo model. By including <code>conversation_history</code> in the API
+               request, the chatbot appears to "remember" previous conversations.
+            </p>
+
+            <p class="project-description">
+               To maintain memory across sessions, each new message is written to a file via the
+               <code>save_convo_history</code> function in <code>addMessagetoConvoHistory.py</code>. This
+               function ensures that each message is formatted and appended to <code>convo_history.txt</code>.
+               If the directory <code>convoHistory/</code> does not exist, it is created automatically to
+               avoid file errors.
+            </p>
+
+            <h2 class="project-title">4.6.2 Link with Voice Control</h2>
+
+            <p class="project-description">
+               The complete voice interaction workflow starts with a user talking and uploading an audio file,
+               which is saved and converted to MP3 using <code>convertAudioFile.py</code>. Many mobile
+               devices record voice in 3GP format, which is not compatible with OpenAI Whisper — this script
+               handles the conversion automatically.
+            </p>
+
+            <p class="project-description">
+               The MP3 file is then sent to OpenAI Whisper for transcription via <code>transcribeAudio.py</code>,
+               which interacts with OpenAI's <code>whisper-1</code> model to return a text version of the
+               spoken words. This transcription is stored in conversation history, providing context for the
+               ongoing interaction. Since the system is voice-based, the AI-generated text response is then
+               converted back into speech using OpenAI's Text-to-Speech (TTS) API in
+               <code>textToSpeech.py</code> with the <code>tts-1</code> model, and the resulting MP3 file
+               is sent back to the user.
+            </p>
+
+            <h2 class="project-title">4.6.3 Adjustments to the Model</h2>
+
+            <p class="project-description">
+               The model itself is not directly modified or fine-tuned. Instead, the approach uses the
+               ability to personalize and guide ChatGPT through an initial input via the
+               <code>process_text_with_openai()</code> function. By sending an initial system message at
+               each startup, the model adheres to specific guidelines and tailors its responses accordingly.
+               This approach provides a simpler solution for the prototype, allowing the model to be
+               flexibly adapted without requiring deep technical modifications.
+            </p>
+
+            <p class="project-description">
+               Tomo's personality is defined as follows: <em>"Hey ChatGPT, your name is now Tomo. You're a
+               friendly, empathetic chatbot who wants to promote hedonic, intellectual and emotional
+               well-being. Your personality is INFP, meaning empathetic, creative and thoughtful. Always
+               answer at eye level, especially in conversations with young people, and keep your answers
+               variable. Be friendly, mindful and authentic in your language style. Avoid long, detailed
+               texts, but adapt to the conversation and the person you are talking to. Remember to sound as
+               human as possible and not like a machine."</em>
+            </p>
+         </div>
+      </section>
+
+   </main>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+
+</body>
+</html>
