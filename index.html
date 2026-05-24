@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html class="no-js" lang="de">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <title>Milorad's Portfolio</title>
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+   <link rel="stylesheet" href="css/default.css">
+   <link rel="stylesheet" href="css/layout.css">
+   <link rel="stylesheet" href="css/media-queries.css">
+   <link rel="stylesheet" href="css/magnific-popup.css">
+   <link rel="stylesheet" href="css/portfolio.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   <script src="js/modernizr.js"></script>
+   <script src="main.js"></script>
+</head>
+
+<body>
+   <header id="home">
+      <img class="background-video" src="images/back.svg" alt="">
+
+      <nav id="nav-wrap" aria-label="Hauptnavigation">
+         <a class="mobile-btn" href="#nav-wrap" title="Navigation anzeigen">Navigation anzeigen</a>
+         <a class="mobile-btn" href="#" title="Navigation ausblenden">Navigation ausblenden</a>
+
+         <ul id="nav" class="nav">
+            <li class="current"><a href="#home" data-i18n="nav.home">Home</a></li>
+            <li><a href="#about" data-i18n="nav.about">Über mich</a></li>
+            <li><a href="#projekte" data-i18n="nav.projects">Projekte</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#chatbot" data-i18n="nav.chatbot">Mein Chatbot</a></li>
+         </ul>
+
+         <button id="lang-toggle" class="lang-toggle" aria-label="Switch language" onclick="toggleLanguage()">
+            <span class="lang-toggle-de"><img src="images/german.png" alt="Deutsch" class="lang-flag"></span>
+            <span class="lang-toggle-divider">/</span>
+            <span class="lang-toggle-en"><img src="images/english.png" alt="English" class="lang-flag"></span>
+         </button>
+      </nav>
+
+      <div class="row banner">
+         <div class="banner-text">
+            <section class="about-section" aria-label="Einleitung">
+               <h1 class="about-welcome" data-i18n="hero.welcome">Willkommen auf meinem <span class="name-gradient">Portfolio</span></h1>
+               <p class="about-intro" data-i18n="iam">Ich bin Milorad Cika</p>
+               <h2 class="chatbot-teaser-heading" data-i18n="hero.chatbotTeaser">
+                  Sie haben direkte Fragen an mich? Fragen Sie gerne meinen Chatbot!</h2>
+               <a href="#chatbot" class="chatbot-teaser-btn" aria-label="Zum Chatbot">
+                  <img src="images/claude.png" alt="Claude Chatbot" class="chatbot-teaser-btn-icon">
+               </a>
+            </section>
+         </div>
+      </div>
+   </header>
+
+   <main>
+      <div class="section-glow"></div>
+      <section id="about" class="cards-section split-section cv-section-wrapper">
+         <div class="split-layout">
+            <div class="split-card-plain">
+               <img class="profile-pic-plain" src="images/profile.png" alt="Profilbild von Milorad Cika">
+            </div>
+
+            <div class="split-text">
+               <p data-i18n="about.text">
+                  Hi! Ich bin Milorad Cika und beschäftige mich mit den Themen Künstliche Intelligenz, Datenanalyse, digitale Transformation und Governance. 
+                  Durch meine Erfahrungen bei Capgemini, KPMG sowie in freiberuflichen Projekten verbinde ich analytisches Denken mit strategischer und 
+                  lösungsorientierter Arbeitsweise. Dabei liegt mein Fokus insbesondere auf der Optimierung datengetriebener Prozesse und der Entwicklung 
+                  nachhaltiger digitaler Lösungen.
+                  <br><br>
+                  Auf dieser Website finden Sie einen kompakten Überblick über meinen Werdegang, meine Projekte und meine fachlichen Schwerpunkte. Bei weiteren 
+                  Fragen können Sie sich gerne an meinen Chatbot wenden, der Ihnen zusätzliche Einblicke in meine Erfahrungen, Kompetenzen und meiner Person geben kann.
+               </p>
+            </div>
+         </div>
+
+         <div class="cv-container">
+            <div class="cv-tab-toggle" role="tablist" aria-label="Werdegang">
+               <button class="cv-tab active" type="button" data-tab="beruf" onclick="switchTab('beruf')" data-i18n="cv.tabs.work">
+                  Berufserfahrung
+               </button>
+               <button class="cv-tab" type="button" data-tab="ausbildung" onclick="switchTab('ausbildung')" data-i18n="cv.tabs.education">
+                  Ausbildung
+               </button>
+               <button class="cv-tab" type="button" data-tab="zertifikate" onclick="switchTab('zertifikate')" data-i18n="cv.tabs.certificates">
+                  Zertifikate
+               </button>
+            </div>
+
+            <div id="tab-beruf" class="cv-tab-content active">
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <img class="cv-logo-img" src="images/Capgemini.png" alt="Capgemini">
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">IT-Architect</span>
+                        <span class="cv-dates" data-i18n="cv.capgemini.time">02/2026 – aktuell>02/2026 – aktuell</span>
+                     </div>
+                     <p class="cv-institution">Capgemini</p>
+                     <ul class="cv-bullets">
+                        <li data-i18n="cv.capgemini.b1">Pflege, Validierung und Qualitätssicherung von Datenbeständen in internen Systemen unter Berücksichtigung von Datenschutz- und Compliance-Vorgaben.</li>
+                        <li data-i18n="cv.capgemini.b2">Analyse und Korrektur von Dateninkonsistenzen sowie Unterstützung bei Datenmigrationen, Systemumstellungen und der Sicherstellung konsistenter Datenflüsse.</li>
+                        <li data-i18n="cv.capgemini.b3">Erstellung von Reports, Auswertungen und Dokumentationen zur Unterstützung transparenter Prozesse und effizienter Datenmanagement-Strukturen.</li>
+                        <li data-i18n="cv.capgemini.b4">Entwicklung und Automatisierung von Anwendungen und Prozessen mit Python.</li>
+                        <li data-i18n="cv.capgemini.b5">Entwicklungsschwerpunkt GenAI-Plattformarchitektur.</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <hr class="cv-divider">
+
+               <div class="cv-entry">
+                  <div class="cv-logo-cell cv-logo-cell--empty"></div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role" data-i18n="cv.freelance.role">Data Analyst</span>
+                        <span class="cv-dates">08/2025 – 02/2026</span>
+                     </div>
+                     <p class="cv-institution" data-i18n="cv.freelance.company">Freelancing</p>
+                     <ul class="cv-bullets">
+                        <li data-i18n="cv.freelance.b1">Konsolidierung, Strukturierung und Analyse von Unternehmensdaten aus operativen Systemen zur Schaffung einer zuverlässigen und einheitlichen Datenbasis.</li>
+                        <li data-i18n="cv.freelance.b2">Entwicklung datenbasierter Auswertungen und Reports zur Unterstützung operativer Steuerung sowie strategischer Entscheidungsprozesse.</li>
+                        <li data-i18n="cv.freelance.b3">Identifikation von Optimierungs- und Effizienzpotenzialen durch die Analyse betriebswirtschaftlicher Kennzahlen und datengetriebener Geschäftsprozesse.</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <hr class="cv-divider">
+
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <img class="cv-logo-img" src="images/KPMG.png" alt="KPMG">
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">IT-Security Consultant</span>
+                        <span class="cv-dates">11/2022 – 08/2023</span>
+                     </div>
+                     <p class="cv-institution">KPMG</p>
+                     <ul class="cv-bullets">
+                        <li data-i18n="cv.kpmg.b1">Strukturierung eines Leistungsangebots regulatorischer Security-Anforderungen inklusive inhaltlicher Ausarbeitung und adressatengerechter Aufbereitung.</li>
+                        <li data-i18n="cv.kpmg.b2">Analyse von SailPoint sowie Bewertung relevanter System-, Prozess- und Schnittstellenanforderungen für externe Kooperationspartner.</li>
+                        <li data-i18n="cv.kpmg.b3">Erstellung von Datenschutzschulungen sowie Konzeption und Entwicklung von Awareness-Maßnahmen auf Basis von ISO/IEC 27001, NIST und CSF.</li>
+                        <li data-i18n="cv.kpmg.b4">Dokumentation standardisierter Prüf- und Analyseprozesse zur Sicherstellung regulatorischer Anforderungen.</li>
+                        <li data-i18n="cv.kpmg.b5">Mitarbeit an der Ausarbeitung des NIS-2-Umsetzungsgesetzes.</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <hr class="cv-divider">
+
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <img class="cv-logo-img" src="images/SC_Bau.png" alt="SC Bau">
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role" data-i18n="cv.scbau.role">Buchhaltungsassistent</span>
+                        <span class="cv-dates">10/2017 – 04/2020</span>
+                     </div>
+                     <p class="cv-institution">SC Bau</p>
+                     <ul class="cv-bullets">
+                        <li data-i18n="cv.scbau.b1">Eigenständige Abwicklung administrativer und organisatorischer Aufgaben, einschließlich Rechnungsstellung, Schriftverkehr und strukturierter Datenbankpflege.</li>
+                        <li data-i18n="cv.scbau.b2">Ansprechpartner für Kundenanliegen sowie Mitwirkung an der Sicherstellung und Einhaltung definierter Qualitätsstandards.</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            
+            <div id="tab-ausbildung" class="cv-tab-content">
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <img class="cv-logo-img cv-logo-img--uni" src="images/Goethe-Logo.png" alt="Goethe-Universität Frankfurt">
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">Informatik M.Sc.</span>
+                        <span class="cv-dates">10/2021 – 04/2025</span>
+                     </div>
+                     <p class="cv-institution">Goethe-Universität, Frankfurt am Main</p>
+                     <ul class="cv-bullets">
+                        <li data-i18n="cv.msc.b1">Thesis: Design und Entwicklung einer KI-basierten Chatbot-App in Python zur Unterstützung und Förderung der mentalen Gesundheit.</li>
+                        <li data-i18n="cv.msc.b2">Unipraktikum: In Kooperation mit Campana &amp; Schott eine Ladesäuleninfrastruktur mit innocept mobility für epsotech geplant und erfolgreich vorgestellt.</li>
+                        <li data-i18n="cv.msc.b3">Schwerpunkt auf Wirtschaftsinformatik, Künstlicher Intelligenz und Big Data.</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <hr class="cv-divider">
+
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <img class="cv-logo-img cv-logo-img--uni" src="images/osaka.png" alt="Osaka University">
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role" data-i18n="cv.osaka.role">Auslandssemester</span>
+                        <span class="cv-dates">09/2023 – 02/2024</span>
+                     </div>
+                     <p class="cv-institution">The University of Osaka (大阪大学), Osaka</p>
+                     <ul class="cv-bullets">
+                        <li data-i18n="cv.osaka.b1">Absolvierung eines halbjährigen akademischen Austauschs im Rahmen des Kurzzeit-Studentenaustauschprogramms der Universität Osaka (OUSSEP).</li>
+                        <li data-i18n="cv.osaka.b2">Erwerb internationaler Erfahrung und interkultureller akademischer Kenntnisse im Bereich KI und Projektmanagement.</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <hr class="cv-divider">
+
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <img class="cv-logo-img cv-logo-img--uni" src="images/Goethe-Logo.png" alt="Goethe-Universität Frankfurt">
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">Informatik B.Sc.</span>
+                        <span class="cv-dates">04/2017 – 08/2021</span>
+                     </div>
+                     <p class="cv-institution">Goethe-Universität, Frankfurt am Main</p>
+                     <ul class="cv-bullets">
+                        <li data-i18n="cv.bsc.b1">Thesis: Konzeption und Entwicklung eines datengetriebenen Reporting-Dashboards in Python für politische Stakeholder im Bildungsbereich.</li>
+                        <li data-i18n="cv.bsc.b2">Nebenfach: Volkswirtschaftslehre.</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <hr class="cv-divider">
+
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <img class="cv-logo-img cv-logo-img--uni" src="images/GGFFM.png" alt="Goethe-Gymnasium Frankfurt">
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">Abitur</span>
+                        <span class="cv-dates">08/2007 – 06/2016</span>
+                     </div>
+                     <p class="cv-institution">Goethe-Gymnasium, Frankfurt am Main</p>
+                     <ul class="cv-bullets">
+                        <li data-i18n="cv.abi">Erwerb der allgemeinen Hochschulreife.</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+
+            <div id="tab-zertifikate" class="cv-tab-content">
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <div class="cv-pdf-thumb" onclick="openPdfLightbox('images/AB-730.pdf')" title="PDF öffnen">
+                        <iframe class="cv-pdf-iframe" src="images/AB-730.pdf#toolbar=0&navpanes=0&scrollbar=0" title="AB-730 Zertifikat"></iframe>
+                        <div class="cv-pdf-overlay"><span class="cv-pdf-icon">&#128269;</span></div>
+                     </div>
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">Microsoft Certified: AI Business Professional (AB-730)</span>
+                        <span class="cv-dates">Mai 2026</span>
+                     </div>
+                     <p class="cv-institution">Microsoft</p>
+                     <ul class="cv-bullets">
+                        <li data-i18n="cert61">KI-Grundlagen, Einsatzmöglichkeiten und ethische Rahmenbedingungen im Unternehmenskontext.</li>
+                        <li data-i18n="cert62">Bewertung und Kommunikation des Geschäftswerts von KI-Lösungen gegenüber Stakeholdern.</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <hr class="cv-divider">
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <div class="cv-pdf-thumb" onclick="openPdfLightbox('images/AZ-900.pdf')" title="PDF öffnen">
+                        <iframe class="cv-pdf-iframe" src="images/AZ-900.pdf#toolbar=0&navpanes=0&scrollbar=0" title="AZ-900 Zertifikat"></iframe>
+                        <div class="cv-pdf-overlay"><span class="cv-pdf-icon">&#128269;</span></div>
+                     </div>
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">Microsoft Certified: Azure Fundamentals (AZ-900)</span>
+                        <span class="cv-dates">Mai 2026</span>
+                     </div>
+                     <p class="cv-institution">Microsoft</p>
+                     <ul class="cv-bullets">
+                        <li data-i18n="cert51">Grundlegendes Verständnis von Cloud-Konzepten, Azure-Diensten, Sicherheit und Compliance.</li>
+                        <li data-i18n="cert52">Einschätzung von Cloud-Kosten, SLAs und geeigneten Azure-Servicemodellen für verschiedene Szenarien.</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <hr class="cv-divider">
+
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <div class="cv-pdf-thumb" onclick="openPdfLightbox('images/MS_AI_Product_Manager.pdf')" title="PDF öffnen">
+                        <iframe class="cv-pdf-iframe" src="images/MS_AI_Product_Manager.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Microsoft AI Product Manager Zertifikat"></iframe>
+                        <div class="cv-pdf-overlay"><span class="cv-pdf-icon">&#128269;</span></div>
+                     </div>
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">Microsoft AI Product Manager</span>
+                        <span class="cv-dates">Feb 2026</span>
+                     </div>
+                     <p class="cv-institution">Microsoft &amp; Coursera</p>
+                     <ul class="cv-bullets">
+                        <li data-i18n="cert41">Product Lifecycle Management mit Azure, Power BI und Copilot – von der Konzeption bis zum Launch.</li>
+                        <li data-i18n="cert42">Entwicklung von Product Roadmaps, UX/UI-Design sowie Go-to-Market- und Post-Launch-Strategien.</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <hr class="cv-divider">
+
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <div class="cv-pdf-thumb" onclick="openPdfLightbox('images/Microsoft_Business_Analyst_Zertifikat.pdf')" title="PDF öffnen">
+                        <iframe class="cv-pdf-iframe" src="images/Microsoft_Business_Analyst_Zertifikat.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Microsoft Business Analyst Zertifikat"></iframe>
+                        <div class="cv-pdf-overlay"><span class="cv-pdf-icon">&#128269;</span></div>
+                     </div>
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">Microsoft Business Analyst</span>
+                        <span class="cv-dates">Nov 2025</span>
+                     </div>
+                     <p class="cv-institution">Microsoft &amp; Coursera</p>
+                     <ul class="cv-bullets">
+                        <li data-i18n="cert31">Anforderungserhebung, Prozessmodellierung mit Microsoft Visio und Lösungsvalidierung.</li>
+                        <li data-i18n="cert31">Datenanalyse mit Excel sowie Stakeholder-Management und Kommunikation von Analyseergebnissen.</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <hr class="cv-divider">
+
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <div class="cv-pdf-thumb" onclick="openPdfLightbox('images/Data_Analytics_Zertifikat.pdf')" title="PDF öffnen">
+                        <iframe class="cv-pdf-iframe" src="images/Data_Analytics_Zertifikat.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Google Data Analytics Zertifikat"></iframe>
+                        <div class="cv-pdf-overlay"><span class="cv-pdf-icon">&#128269;</span></div>
+                     </div>
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">Google Data Analytics</span>
+                        <span class="cv-dates">Aug 2025</span>
+                     </div>
+                     <p class="cv-institution">Google &amp; Coursera</p>
+                     <ul class="cv-bullets">
+                        <li data-i18n="cert21">Datenaufbereitung, -bereinigung und -analyse mit SQL, Tableau und Tabellenkalkulationen.</li>
+                        <li data-i18n="cert21">Datenvisualisierung und datengetriebenes Entscheiden durch strukturierte Analyse-Workflows.</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <hr class="cv-divider">
+
+               <div class="cv-entry">
+                  <div class="cv-logo-cell">
+                     <div class="cv-pdf-thumb" onclick="openPdfLightbox('images/Project_Management_Zertifikat.pdf')" title="PDF öffnen">
+                        <iframe class="cv-pdf-iframe" src="images/Project_Management_Zertifikat.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Google Project Management Zertifikat"></iframe>
+                        <div class="cv-pdf-overlay"><span class="cv-pdf-icon">&#128269;</span></div>
+                     </div>
+                  </div>
+                  <div class="cv-content">
+                     <div class="cv-role-row">
+                        <span class="cv-role">Google Project Management</span>
+                        <span class="cv-dates">Apr 2024</span>
+                     </div>
+                     <p class="cv-institution">Google &amp; Coursera</p>
+                     <ul class="cv-bullets">
+                        <li data-i18n="cert11">Planung, Steuerung und Durchführung von Projekten nach klassischen und agilen Methoden.</li>
+                        <li data-i18n="cert11">Risikomanagement, Budgetkontrolle, Teamkoordination und Stakeholder-Kommunikation.</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+
+            <div id="cv-pdf-lightbox" class="cv-pdf-lightbox" onclick="closePdfLightbox()">
+               <div class="cv-pdf-lightbox-inner" onclick="event.stopPropagation()">
+                  <button class="cv-pdf-close" type="button" onclick="closePdfLightbox()" aria-label="PDF schließen">
+                     &#10005;
+                  </button>
+                  <iframe id="cv-pdf-lightbox-frame" class="cv-pdf-lightbox-frame" src="" title="Zertifikat PDF"></iframe>
+               </div>
+            </div>
+         </div>
+      </section>
+      <div class="section-glow"></div>
+
+      <section id="projekte" class="work-section">
+         <h2 class="work-heading" data-i18n="workheading">Praktische Erfahrungen</h2>
+         <div class="work-container">
+
+            <div class="work-carousel-wrapper">
+               <div class="work-carousel-track" id="workCarouselTrack">
+
+                  <a href="work1.html" class="work-card work-card-link">
+                     <div class="work-card-image-wrap">
+                        <img src="images/work1.svg" alt="Data Analytics Projects" class="work-card-img">
+                        <div class="work-card-overlay">
+                           <span class="work-card-zoom">&#8599;</span>
+                        </div>
+                     </div>
+                     <div class="work-card-info">
+                        <h3 class="work-card-title" data-i18n="work-da">Data Analytics Projects</h3>
+                        <p class="work-card-category" data-i18n="work-dam">Data Analytics &amp; Data Science</p>
+                     </div>
+                  </a>
+
+                  <a
+                     href="https://docs.google.com/document/d/1pSzgcvOabBRc5DPztfyo4oOf6VNM3h_qQQ4fMTl8Q_4/edit?usp=sharing"
+                     class="work-card work-card-link"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                  >
+                     <div class="work-card-image-wrap">
+                        <img src="images/work2.svg" alt="Seminar Campana & Schott" class="work-card-img">
+                        <div class="work-card-overlay">
+                           <span class="work-card-zoom">&#8599;</span>
+                        </div>
+                     </div>
+                     <div class="work-card-info">
+                        <h3 class="work-card-title" data-i18n="work-cde">Cloud- /Data Engineer Projekte</h3>
+                        <p class="work-card-category" data-i18n="work-cdem">Azure &amp; GCP</p>
+                     </div>
+                  </a>
+
+                  <a href="work2.html" class="work-card work-card-link">
+                     <div class="work-card-image-wrap">
+                        <img src="images/work3.svg" alt="Cloud Engineering Portfolio" class="work-card-img">
+                        <div class="work-card-overlay">
+                           <span class="work-card-zoom">&#8599;</span>
+                        </div>
+                     </div>
+                     <div class="work-card-info">
+                        <h3 class="work-card-title" data-i18n="work-cs">Seminar Campana &amp; Schott</h3>
+                        <p class="work-card-category" data-i18n="work-csm">Projectmanagement</p>
+                     </div>
+                  </a>
+
+                  <a href="work4.html" class="work-card work-card-link">
+                     <div class="work-card-image-wrap">
+                        <img src="images/work4.svg" alt="Projekt 4" class="work-card-img">
+                        <div class="work-card-overlay">
+                           <span class="work-card-zoom">&#8599;</span>
+                        </div>
+                     </div>
+                     <div class="work-card-info">
+                        <h3 class="work-card-title" data-i18n="work-kic">Mental Health KI-Chatbot</h3>
+                        <p class="work-card-category" data-i18n="work-kicm">Künstliche Intelligenz</p>
+                     </div>
+                  </a>
+
+                  <a href="#" class="work-card work-card-link">
+                     <div class="work-card-image-wrap">
+                        <img src="images/work5.svg" alt="Projekt 5" class="work-card-img">
+                        <div class="work-card-overlay">
+                           <span class="work-card-zoom">&#8599;</span>
+                        </div>
+                     </div>
+                     <div class="work-card-info">
+                        <h3 class="work-card-title" data-i18n="work-wb">Website Development</h3>
+                        <p class="work-card-category" data-i18n="work-wbm">HTML & CSS</p>
+                     </div>
+                  </a>
+
+               </div><!-- /.work-carousel-track -->
+            </div><!-- /.work-carousel-wrapper -->
+
+            <!-- Arrow Navigation -->
+            <div class="work-carousel-nav">
+               <button class="work-carousel-btn" id="workPrev" aria-label="Vorheriges Projekt">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                     <polyline points="15 18 9 12 15 6"/>
+                  </svg>
+               </button>
+               <button class="work-carousel-btn" id="workNext" aria-label="Nächstes Projekt">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                     <polyline points="9 18 15 12 9 6"/>
+                  </svg>
+               </button>
+            </div>
+
+         </div><!-- /.work-container -->
+      </section>
+      <div class="section-glow"></div>
+
+      <section id="skills" class="cards-section">
+         <div class="cards-grid">
+            <div class="glass-card">
+               <h3 class="card-title">Python</h3>
+               <p class="card-body" data-i18n="skills.python">Fundierte Kenntnisse in Python, eingesetzt in vielfältigen Projekten aus den Bereichen Data Analytics, Datenmanagement und KI.</p>
+            </div>
+
+            <div class="glass-card">
+               <h3 class="card-title" data-i18n="skills.ai.title">KI</h3>
+               <p class="card-body" data-i18n="skills.genai">Fundiertes Wissen bezüglich KI, Machine Learning, Deep Learning und GenAI sowie praktische Erfahrung mit KI-gestützten Tools, Prompting und Anwendungsmöglichkeiten generativer KI.</p>
+            </div>
+
+            <div class="glass-card">
+               <h3 class="card-title" data-i18n="skills.pm.title">Projektmanagement</h3>
+               <p class="card-body" data-i18n="skills.pm.body">Erfahrung in agilen Projektumgebungen sowie der Zusammenarbeit in internationalen Teams. Vertraut mit Scrum, Kanban und SAFe.</p>
+            </div>
+
+            <div class="glass-card">
+               <h3 class="card-title">Governance</h3>
+               <p class="card-body" data-i18n="skills.governance">Kenntnisse in den Bereichen Datenschutz, Compliance und verantwortungsvoller KI-Nutzung in regulierten Unternehmensumgebungen.</p>
+            </div>
+
+            <div class="glass-card">
+               <h3 class="card-title">Cloud Computing</h3>
+               <p class="card-body" data-i18n="skills.cloud">Fundiertes Verständnis von Microsoft Azure und Google Cloud Platform sowie sichere Navigation und Nutzung cloudbasierter Dienste und Anwendungen.</p>
+            </div>
+
+            <div class="glass-card">
+               <h3 class="card-title">Data Management</h3>
+               <p class="card-body" data-i18n="skills.data">Erfahrung in der Aufbereitung, Analyse und Interpretation von Daten sowie in den Bereichen Data Management und Data Governance.</p>
+            </div>
+         </div>
+      </section>
+      <div class="section-glow"></div>
+
+      <section id="chatbot" class="chatbot-area">
+         <h2 class="chatbot-heading" data-i18n="chatbot.heading">Sie haben noch Fragen? Fragen Sie gerne meinen Chatbot!</h2>
+         <div class="openclaw-chat-section">
+            <div class="openclaw-chat-window">
+               <div class="openclaw-chat-header">
+                  <span class="openclaw-status-dot"></span>
+                  <span>Milorad's Chatbot</span>
+               </div>
+
+               <div class="openclaw-chat-body" id="openclaw-chat-body">
+                  <div class="openclaw-message agent" data-i18n="chatbot.greeting">
+                     Hallo! Ich bin Milorads persönlicher KI-Agent. Wie kann ich dir helfen?
+                  </div>
+               </div>
+
+               <form class="openclaw-chat-form" id="openclaw-chat-form">
+                  <input
+                     type="text"
+                     id="openclaw-chat-input"
+                     placeholder="Nachricht schreiben..."
+                     data-i18n-placeholder="chatbot.placeholder"
+                     autocomplete="off"
+                     aria-label="Nachricht an Openclaw Agent"
+                  >
+                  <button type="submit" aria-label="Nachricht senden" data-i18n="chatbot.send">Senden</button>
+               </form>
+            </div>
+         </div>
+      </section>
+      <div class="section-glow"></div>
+
+      <section class="cards-section download-section">
+         <h2 class="download-heading" data-i18n="downloads.heading">Meine Unterlagen zum Download</h2>
+
+         <div class="download-buttons">
+            <a href="Milorad Cika - Zertifikate.pdf" class="download-btn" target="_blank" rel="noopener noreferrer" data-i18n="downloads.certificates">
+               Zertifikate
+            </a>
+            <a href="Milorad Cika - Lebenslauf.pdf" class="download-btn" target="_blank" rel="noopener noreferrer" data-i18n="downloads.cv">
+               Lebenslauf
+            </a>
+            <a href="Milorad Cika - Arbeitszeugnisse.pdf" class="download-btn" target="_blank" rel="noopener noreferrer" data-i18n="downloads.references">
+               Arbeitszeugnisse
+            </a>
+         </div>
+      </section>
+      <div class="section-glow"></div>
+
+   <!-- Socials -->
+      <section style="background: #0f0f0f;">
+         <ul class="social">
+            <li><a href="https://www.linkedin.com/in/milorad-cika-a66134271/"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://github.com/MisoCLOUD"><i class="fa fa-github"></i></a></li>
+         </ul>
+      </section>
+   </main>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script src="js/jquery-migrate-1.2.1.min.js"></script>
+   <script src="js/jquery.flexslider.js"></script>
+   <script src="js/waypoints.js"></script>
+   <script src="js/jquery.fittext.js"></script>
+   <script src="js/magnific-popup.js"></script>
+   <script src="js/init.js"></script>
+
+   <script>
+      (function() {
+         var sections = ['home', 'about', 'projekte', 'skills', 'chatbot'];
+         var navLinks = document.querySelectorAll('#nav li a');
+         var navOffset = 80;
+
+         function onScroll() {
+            var scrollY = window.pageYOffset;
+            var current = 'home';
+
+            sections.forEach(function(id) {
+               var el = document.getElementById(id);
+
+               if (el && el.offsetTop - navOffset <= scrollY) {
+                  current = id;
+               }
+            });
+
+            navLinks.forEach(function(link) {
+               var href = link.getAttribute('href');
+               link.parentElement.classList.toggle('current', href === '#' + current);
+            });
+         }
+
+         window.addEventListener('scroll', onScroll, { passive: true });
+         onScroll();
+      })();
+
+      function switchTab(tab) {
+         document.querySelectorAll('.cv-tab').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.tab === tab);
+         });
+
+         document.querySelectorAll('.cv-tab-content').forEach(function(pane) {
+            pane.classList.toggle('active', pane.id === 'tab-' + tab);
+         });
+      }
+
+      function openPdfLightbox(src) {
+         var lightbox = document.getElementById('cv-pdf-lightbox');
+         var frame = document.getElementById('cv-pdf-lightbox-frame');
+
+         frame.src = src;
+         lightbox.classList.add('active');
+         document.body.style.overflow = 'hidden';
+      }
+
+      function closePdfLightbox() {
+         var lightbox = document.getElementById('cv-pdf-lightbox');
+         var frame = document.getElementById('cv-pdf-lightbox-frame');
+
+         lightbox.classList.remove('active');
+         frame.src = '';
+         document.body.style.overflow = '';
+      }
+
+      const openclawForm = document.getElementById('openclaw-chat-form');
+      const openclawInput = document.getElementById('openclaw-chat-input');
+      const openclawBody = document.getElementById('openclaw-chat-body');
+
+      function addOpenclawMessage(text, sender) {
+         const message = document.createElement('div');
+
+         message.className = 'openclaw-message ' + sender;
+         message.textContent = text;
+
+         openclawBody.appendChild(message);
+         openclawBody.scrollTop = openclawBody.scrollHeight;
+      }
+
+      // ── Work Carousel ──────────────────────────────────────────
+      (function () {
+         const track   = document.getElementById('workCarouselTrack');
+         const prevBtn = document.getElementById('workPrev');
+         const nextBtn = document.getElementById('workNext');
+
+         if (!track) return;
+
+         const cards   = Array.from(track.querySelectorAll('.work-card'));
+         const VISIBLE = 3;
+         const total   = cards.length;
+         let   current = 0;
+
+         function getCardStep() {
+         // Breite einer Karte + Gap (32px) = exakter Versatz pro Schritt
+            const card = cards[0];
+            const gap  = 32;
+            return card.getBoundingClientRect().width + gap;
+         }
+
+         function update() {
+            const step   = getCardStep();
+            const offset = current * step;
+            track.style.transform = 'translateX(-' + offset + 'px)';
+            prevBtn.disabled = current === 0;
+            nextBtn.disabled = current >= total - VISIBLE;
+         }
+
+         function goTo(index) {
+            current = Math.max(0, Math.min(index, total - VISIBLE));
+            update();
+         }
+
+         prevBtn.addEventListener('click', function() { goTo(current - 1); });
+         nextBtn.addEventListener('click', function() { goTo(current + 1); });
+
+         // Bei Fenstergrößenänderung neu berechnen
+         window.addEventListener('resize', update);
+
+         update();
+      })();
+      // ───────────────────────────────────────────────────────────
+
+      // ── Language Toggle ────────────────────────────────────────
+      const translations = {
+         de: {
+            'nav.home': 'Home',
+            'nav.about': 'Über mich',
+            'nav.projects': 'Projekte',
+            'nav.chatbot': 'Mein Chatbot',
+            'hero.welcome': 'Willkommen auf meinem <span class="name-gradient">Portfolio</span>',
+            'iam': 'Ich bin Milorad Cika',
+            'hero.chatbotTeaser': 'Sie haben direkte Fragen an mich? Fragen Sie gerne meinen Chatbot!',
+            'about.text': 'Hi! Ich bin Milorad Cika und spezialisere mich in den Themen Künstliche Intelligenz, Datenmanagement, digitale Transformation und Governance. Durch meine Erfahrungen bei Capgemini, KPMG sowie in freiberuflichen Projekten verbinde ich analytisches Denken mit strategischer und lösungsorientierter Arbeitsweise. Dabei liegt mein Fokus insbesondere auf der Optimierung datengetriebener Prozesse und der Entwicklung  nachhaltiger digitaler Lösungen.<br><br>Auf dieser Website finden Sie einen kompakten Überblick über meinen Werdegang, meine Projekte und meine fachlichen Schwerpunkte. Bei weiteren Fragen können Sie sich gerne an meinen Chatbot wenden, der Ihnen zusätzliche Einblicke in meine Erfahrungen, Kompetenzen und meiner Person geben kann.',
+            'cv.tabs.work': 'Berufserfahrung',
+            'cv.tabs.education': 'Ausbildung',
+            'cv.tabs.certificates': 'Zertifikate',
+            'cv.capgemini.time': '02/2026 – aktuell',
+            'cv.capgemini.b1': 'Pflege, Validierung und Qualitätssicherung von Datenbeständen in internen Systemen unter Berücksichtigung von Datenschutz- und Compliance-Vorgaben.',
+            'cv.capgemini.b2': 'Analyse und Korrektur von Dateninkonsistenzen sowie Unterstützung bei Datenmigrationen, Systemumstellungen und der Sicherstellung konsistenter Datenflüsse.',
+            'cv.capgemini.b3': 'Erstellung von Reports, Auswertungen und Dokumentationen zur Unterstützung transparenter Prozesse und effizienter Datenmanagement-Strukturen.',
+            'cv.capgemini.b4': 'Entwicklung und Automatisierung von Anwendungen und Prozessen mit Python.',
+            'cv.capgemini.b5': 'Entwicklungsschwerpunkt GenAI-Plattformarchitektur.',
+            'cv.freelance.role': 'Data Analyst',
+            'cv.freelance.company': 'Freelancing',
+            'cv.freelance.b1': 'Konsolidierung und Strukturierung von Betriebs-, Verkaufs- und Lieferantendaten aus unterschiedlichen Systemen.',
+            'cv.freelance.b2': 'Erstellung datenbasierter Auswertungen zur Unterstützung operativer und strategischer Entscheidungen.',
+            'cv.freelance.b3': 'Identifikation von Optimierungs- und Effizienzpotenzialen durch die Analyse betriebswirtschaftlicher Kennzahlen und datengetriebener Geschäftsprozesse.',
+            'cv.kpmg.b1': 'Strukturierung eines Leistungsangebots regulatorischer Security-Anforderungen inklusive inhaltlicher Ausarbeitung und adressatengerechter Aufbereitung.',
+            'cv.kpmg.b2': 'Analyse von SailPoint sowie Bewertung relevanter System-, Prozess- und Schnittstellenanforderungen für externe Kooperationspartner.',
+            'cv.kpmg.b3': 'Erstellung von Datenschutzschulungen sowie Konzeption und Entwicklung von Awareness-Maßnahmen auf Basis von ISO/IEC 27001, NIST und CSF.',
+            'cv.kpmg.b4': 'Dokumentation standardisierter Prüf- und Analyseprozesse zur Sicherstellung regulatorischer Anforderungen.',
+            'cv.kpmg.b5': 'Mitarbeit an der Ausarbeitung des NIS-2-Umsetzungsgesetzes.',
+            'cv.scbau.role': 'Buchhaltungsassistent',
+            'cv.scbau.b1': 'Eigenständige Abwicklung administrativer und organisatorischer Aufgaben, einschließlich Rechnungsstellung, Schriftverkehr und strukturierter Datenbankpflege.',
+            'cv.scbau.b2': 'Ansprechpartner für Kundenanliegen sowie Mitwirkung an der Sicherstellung und Einhaltung definierter Qualitätsstandards.',
+            'cv.msc.b1': 'Thesis: Design und Entwicklung einer KI-basierten Chatbot-App in Python zur Unterstützung und Förderung der mentalen Gesundheit.',
+            'cv.msc.b2': 'Unipraktikum: In Kooperation mit Campana & Schott eine Ladesäuleninfrastruktur mit innocept mobility für epsotech geplant und erfolgreich vorgestellt.',
+            'cv.msc.b3': 'Schwerpunkt auf Wirtschaftsinformatik, Künstlicher Intelligenz und Big Data.',
+            'cv.osaka.role': 'Auslandssemester',
+            'cv.osaka.b1': 'Absolvierung eines halbjährigen akademischen Austauschs im Rahmen des Kurzzeit-Studentenaustauschprogramms der Universität Osaka (OUSSEP).',
+            'cv.osaka.b2': 'Erwerb internationaler Erfahrung und interkultureller akademischer Kenntnisse im Bereich KI und Projektmanagement.',
+            'cv.bsc.b1': 'Thesis: Konzeption und Entwicklung eines datengetriebenen Reporting-Dashboards in Python für politische Stakeholder im Bildungsbereich.',
+            'cv.bsc.b2': 'Nebenfach: Volkswirtschaftslehre.',
+            'cv.abi': 'Erwerb der allgemeinen Hochschulreife.',
+            'cert61': 'KI-Grundlagen, Einsatzmöglichkeiten und ethische Rahmenbedingungen im Unternehmenskontext.',
+            'cert62': 'Bewertung und Kommunikation des Geschäftswerts von KI-Lösungen gegenüber Stakeholdern.',
+            'cert51': 'Grundlegendes Verständnis von Cloud-Konzepten, Azure-Diensten, Sicherheit und Compliance.',
+            'cert52': 'Einschätzung von Cloud-Kosten, SLAs und geeigneten Azure-Servicemodellen für verschiedene Szenarien.',
+            'cert41': 'Product Lifecycle Management mit Azure, Power BI und Copilot – von der Konzeption bis zum Launch.',
+            'cert42': 'Entwicklung von Product Roadmaps, UX/UI-Design sowie Go-to-Market- und Post-Launch-Strategien.',
+            'cert31': 'Anforderungserhebung, Prozessmodellierung mit Microsoft Visio und Lösungsvalidierung.',
+            'cert32': 'Datenanalyse mit Excel sowie Stakeholder-Management und Kommunikation von Analyseergebnissen.',
+            'cert21': 'Datenaufbereitung, -bereinigung und -analyse mit SQL, Tableau und Tabellenkalkulationen.',
+            'cert22': 'Datenvisualisierung und datengetriebenes Entscheiden durch strukturierte Analyse-Workflows.',
+            'cert11': 'Planung, Steuerung und Durchführung von Projekten nach klassischen und agilen Methoden.',
+            'cert12': 'Risikomanagement, Budgetkontrolle, Teamkoordination und Stakeholder-Kommunikation.',
+            'workheading': 'Praktische Erfahrungen',
+            "work-da": 'Datenanalyse',
+            "work-dam": 'Data Analyst, Science',
+            "work-cde": 'Cloud-/ Data Engineering',
+            "work-cdem": 'Azure & GCP',
+            "work-cs": 'Uni Praktikum Campana & Schott',
+            "work-csm": 'Projektmanagement',
+            "work-kic": 'KI Chatbot für das Wohlbefinden',
+            "work-kicm": 'Künstliche Intelligenz',
+            "work-wb": 'Webentwicklung',
+            "work-wbm": 'HTML & CSS',
+            'skills.python': 'Fundierte Kenntnisse in Python, eingesetzt in vielfältigen Projekten aus den Bereichen Data Analytics, Datenmanagement und KI.',
+            'skills.ai.title': 'KI',
+            'skills.genai': 'Fundiertes Wissen bezüglich KI, Machine Learning, Deep Learning und GenAI sowie praktische Erfahrung mit KI-gestützten Tools, Prompting und Anwendungsmöglichkeiten generativer KI.',
+            'skills.pm.title': 'Projektmanagement',
+            'skills.pm.body': 'Erfahrung in agilen Projektumgebungen sowie der Zusammenarbeit in internationalen Teams. Vertraut mit Scrum, Kanban und SAFe.',
+            'skills.governance': 'Kenntnisse in den Bereichen Datenschutz, Compliance und verantwortungsvoller KI-Nutzung in regulierten Unternehmensumgebungen.',
+            'skills.cloud': 'Fundiertes Verständnis von Microsoft Azure und Google Cloud Platform sowie sichere Navigation und Nutzung cloudbasierter Dienste und Anwendungen.',
+            'skills.data': 'Erfahrung in der Aufbereitung, Analyse und Interpretation von Daten sowie in den Bereichen Data Management und Data Governance.',
+            'chatbot.heading': 'Sie haben noch Fragen? Fragen Sie gerne meinen Chatbot!',
+            'chatbot.greeting': 'Hallo! Ich bin Milorads persönlicher KI-Agent. Wie kann ich dir helfen?',
+            'chatbot.placeholder': 'Nachricht schreiben...',
+            'chatbot.send': 'Senden',
+            'downloads.heading': 'Meine Unterlagen zum Download',
+            'downloads.certificates': 'Zertifikate',
+            'downloads.cv': 'Lebenslauf',
+            'downloads.references': 'Arbeitszeugnisse',
+         },
+         en: {
+            'nav.home': 'Home',
+            'nav.about': 'About Me',
+            'nav.projects': 'Projects',
+            'nav.chatbot': 'My Chatbot',
+            'hero.welcome': 'Welcome to my <span class="name-gradient">Portfolio</span>',
+            'iam': 'I am Milorad Cika',
+            'hero.chatbotTeaser': 'Have a direct question for me? Feel free to ask my chatbot!',
+            'about.text': 'Hi! My name is Milorad Cika, and I specialize in artificial intelligence, data management, digital transformation, and governance. Drawing on my experience at Capgemini, KPMG, and through freelance projects, I combine analytical thinking with a strategic and solution-oriented approach. My focus is particularly on optimizing data-driven processes and developing sustainable digital solutions.<br><br>On this website, you’ll find a concise overview of my career, my projects, and my areas of expertise. If you have any further questions, feel free to contact my chatbot, which can provide you with additional insights into my experience, skills, and background.',
+            'cv.tabs.work': 'Work Experience',
+            'cv.tabs.education': 'Education',
+            'cv.tabs.certificates': 'Certificates',
+            'cv.capgemini.time': '02/2026 – today',
+            'cv.capgemini.b1': 'Maintenance, validation, and quality assurance of data sets in internal systems, taking into account data protection and compliance requirements.',
+            'cv.capgemini.b2': 'Analysis and correction of data inconsistencies, as well as support for data migrations, system migrations, and ensuring consistent data flows.',
+            'cv.capgemini.b3': 'Creation of reports, analyses, and documentation to support transparent processes and efficient data management structures.',
+            'cv.capgemini.b4': 'Development and automation of applications and processes using Python.',
+            'cv.capgemini.b5': 'Development focus: GenAI platform architecture.',
+            'cv.freelance.b1': 'Consolidation and structuring of operational, sales, and supplier data from various systems.',
+            'cv.freelance.b2': 'Creation of data-driven analyses to support operational and strategic decisions.',
+            'cv.freelance.b3': 'Identification of opportunities for optimization and efficiency gains through the analysis of key performance indicators and data-driven business processes.',
+            'cv.kpmg.b1': 'Structuring a service offering for regulatory security requirements, including content development and stakeholder-appropriate presentation.',
+            'cv.kpmg.b2': 'Analysis of SailPoint and evaluation of relevant system, process, and interface requirements for external partners.',
+            'cv.kpmg.b3': 'Development of data protection training and conception of awareness measures based on ISO/IEC 27001, NIST, and CSF.',
+            'cv.kpmg.b4': 'Documentation of standardized audit and analysis processes to ensure regulatory compliance.',
+            'cv.kpmg.b5': 'Contribution to the drafting of the NIS-2 implementation act.',
+            'cv.scbau.role': 'Accounting Assistant',
+            'cv.scbau.b1': 'Independently handle administrative and organizational tasks, including invoicing, correspondence, and structured database maintenance.',
+            'cv.scbau.b2': 'Serve as the point of contact for customer inquiries and help ensure compliance with defined quality standards.',
+            'cv.msc.b1': 'Thesis: Design and development of an AI-based chatbot app in Python to support and promote mental health.',
+            'cv.msc.b2': 'University internship: In collaboration with Campana & Schott, planned and successfully presented a charging station infrastructure using innocept mobility for epsotech.',
+            'cv.msc.b3': 'Focus on business informatics, artificial intelligence, and big data.',
+            'cv.osaka.role': 'Exchange Semester',
+            'cv.osaka.b1': 'Completed a six-month academic exchange as part of the Osaka University Short-Term Student Exchange Program (OUSSEP).',
+            'cv.osaka.b2': 'Gain international experience and intercultural academic knowledge in the fields of AI and project management.',
+            'cv.bsc.b1': 'Thesis: Conception and development of a data-driven reporting dashboard in Python for political stakeholders in the education sector.',
+            'cv.bsc.b2': 'Minor: Economics.',
+            'cv.abi': 'Obtaining a high school diploma.',
+            'cert61': 'AI fundamentals, use cases, and ethical considerations in a corporate context.',
+            'cert62': 'Evaluating and communicating the business value of AI solutions to stakeholders.',
+            'cert51': 'Basic understanding of cloud concepts, Azure services, security, and compliance.',
+            'cert52': 'Assessment of cloud costs, SLAs, and suitable Azure service models for various scenarios.',
+            'cert41': 'Product lifecycle management with Azure, Power BI, and Copilot—from conception to launch.',
+            'cert42': 'Development of product roadmaps, UX/UI design, and go-to-market and post-launch strategies.',
+            'cert31': 'Requirements gathering, process modeling with Microsoft Visio, and solution validation.',
+            'cert32': 'Data analysis with Excel, as well as stakeholder management and communication of analysis results.',
+            'cert21': 'Data preparation, cleansing, and analysis using SQL, Tableau, and spreadsheets.',
+            'cert22': 'Data visualization and data-driven decision-making through structured analysis workflows.',
+            'cert11': 'Planning, managing, and executing projects using traditional and agile methodologies.',
+            'cert12': 'Risk management, budget control, team coordination, and stakeholder communication.',
+            'workheading': 'Practical Experience',
+            "work-da": 'Data Analysis',
+            "work-dam": 'Data Analysrs, Science',
+            "work-cde": 'Cloud-/ Data Engineering',
+            "work-cdem": 'Azure & GCP',
+            "work-cs": 'Uni Praktikum Campana & Schott',
+            "work-csm": 'Project Management',
+            "work-kic": 'AI Chatbot for mental health',
+            "work-kicm": 'Artificial Intelligence',
+            "work-wb": 'Web Development',
+            "work-wbm": 'HTML & CSS',
+            'skills.python': 'Extensive experience with Python, applied in a wide range of projects in the fields of data analytics, data management, and AI.',
+            'skills.ai.title': 'AI',
+            'skills.genai': 'In-depth knowledge of AI, machine learning, deep learning, and GenAI, as well as hands-on experience with AI-powered tools, prompting, and the applications of generative AI.',
+            'skills.pm.title': 'Project Management',
+            'skills.pm.body': 'Experience in agile project environments and collaborating with international teams. Familiar with Scrum, Kanban, and SAFe.',
+            'skills.governance': 'Knowledge of data protection, compliance, and responsible AI use in regulated corporate environments.',
+            'skills.cloud': 'In-depth understanding of Microsoft Azure and Google Cloud Platform, as well as confident navigation and use of cloud-based services and applications.',
+            'skills.data': 'Experience in data preparation, analysis, and interpretation, as well as in data management and data governance.',
+            'chatbot.heading': 'Still have questions? Feel free to ask my chatbot!',
+            'chatbot.greeting': 'Hello! I am Milorad\'s personal AI agent. How can I help you?',
+            'chatbot.placeholder': 'Write a message...',
+            'chatbot.send': 'Send',
+            'downloads.heading': 'My Documents for Download',
+            'downloads.certificates': 'Certificates',
+            'downloads.cv': 'CV / Résumé',
+            'downloads.references': 'Work References',
+         }
+      };
+
+      let currentLang = 'de';
+
+      function applyLanguage(lang) {
+         const t = translations[lang];
+         document.querySelectorAll('[data-i18n]').forEach(function(el) {
+            const key = el.getAttribute('data-i18n');
+            if (t[key] !== undefined) {
+               el.innerHTML = t[key];
+            }
+         });
+         document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+            const key = el.getAttribute('data-i18n-placeholder');
+            if (t[key] !== undefined) {
+               el.setAttribute('placeholder', t[key]);
+            }
+         });
+         document.documentElement.lang = lang;
+      }
+
+      function toggleLanguage() {
+         currentLang = currentLang === 'de' ? 'en' : 'de';
+         applyLanguage(currentLang);
+         var btn = document.getElementById('lang-toggle');
+         btn.classList.toggle('lang-en-active', currentLang === 'en');
+      }
+      // ───────────────────────────────────────────────────────────
+
+      openclawForm.addEventListener('submit', async function(event) {
+         event.preventDefault();
+
+         const userMessage = openclawInput.value.trim();
+
+         if (!userMessage) return;
+
+         addOpenclawMessage(userMessage, 'user');
+         openclawInput.value = '';
+
+         try {
+            const response = await fetch('https://web-production-6b646.up.railway.app/api/openclaw-chat', {
+               method: 'POST',
+               headers: { 'Content-Type': 'application/json' },
+               body: JSON.stringify({ message: userMessage })
+            });
+
+            if (!response.ok) throw new Error('Nicht erreichbar');
+
+            const data = await response.json();
+            addOpenclawMessage(data.reply || 'Ich habe leider keine Antwort erhalten.', 'agent');
+         } catch (error) {
+            addOpenclawMessage('Der Openclaw Agent ist aktuell noch nicht verbunden.', 'agent');
+         }
+      });
+   </script>
+</body>
+</html>
